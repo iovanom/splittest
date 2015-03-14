@@ -324,3 +324,75 @@
 #5 /home/majeru/vhosts/splittest/system/classes/Kohana/Request.php(997): Kohana_Request_Client->execute(Object(Request))
 #6 /home/majeru/vhosts/splittest/index.php(118): Kohana_Request->execute()
 #7 {main} in /home/majeru/vhosts/splittest/application/classes/Controller/Welcome.php:14
+2015-03-14 11:26:36 --- EMERGENCY: ORM_Validation_Exception [ 0 ]: Failed to validate array ~ MODPATH/orm/classes/Kohana/ORM.php [ 1275 ] in /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php:1302
+2015-03-14 11:26:36 --- DEBUG: #0 /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php(1302): Kohana_ORM->check(NULL)
+#1 /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php(1421): Kohana_ORM->create(NULL)
+#2 /home/majeru/vhosts/splittest/application/classes/Controller/Welcome.php(14): Kohana_ORM->save()
+#3 /home/majeru/vhosts/splittest/system/classes/Kohana/Controller.php(84): Controller_Welcome->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /home/majeru/vhosts/splittest/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Welcome))
+#6 /home/majeru/vhosts/splittest/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /home/majeru/vhosts/splittest/system/classes/Kohana/Request.php(997): Kohana_Request_Client->execute(Object(Request))
+#8 /home/majeru/vhosts/splittest/index.php(118): Kohana_Request->execute()
+#9 {main} in /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php:1302
+2015-03-14 11:30:00 --- EMERGENCY: ORM_Validation_Exception [ 0 ]: Failed to validate array ~ MODPATH/orm/classes/Kohana/ORM.php [ 1275 ] in /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php:1302
+2015-03-14 11:30:00 --- DEBUG: #0 /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php(1302): Kohana_ORM->check(NULL)
+#1 /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php(1421): Kohana_ORM->create(NULL)
+#2 /home/majeru/vhosts/splittest/application/classes/Controller/Welcome.php(14): Kohana_ORM->save()
+#3 /home/majeru/vhosts/splittest/system/classes/Kohana/Controller.php(84): Controller_Welcome->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /home/majeru/vhosts/splittest/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Welcome))
+#6 /home/majeru/vhosts/splittest/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /home/majeru/vhosts/splittest/system/classes/Kohana/Request.php(997): Kohana_Request_Client->execute(Object(Request))
+#8 /home/majeru/vhosts/splittest/index.php(118): Kohana_Request->execute()
+#9 {main} in /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php:1302
+2015-03-14 11:30:40 --- EMERGENCY: Database_Exception [ 1064 ]: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 [ INSERT INTO `roles_users` (`user_id`, `role_id`) VALUES  ] ~ MODPATH/database/classes/Kohana/Database/MySQL.php [ 194 ] in /home/majeru/vhosts/splittest/modules/database/classes/Kohana/Database/Query.php:251
+2015-03-14 11:30:40 --- DEBUG: #0 /home/majeru/vhosts/splittest/modules/database/classes/Kohana/Database/Query.php(251): Kohana_Database_MySQL->query(2, 'INSERT INTO `ro...', false, Array)
+#1 /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php(1577): Kohana_Database_Query->execute(Object(Database_MySQL))
+#2 /home/majeru/vhosts/splittest/application/classes/Controller/Welcome.php(15): Kohana_ORM->add('roles', Object(Model_Role))
+#3 /home/majeru/vhosts/splittest/system/classes/Kohana/Controller.php(84): Controller_Welcome->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /home/majeru/vhosts/splittest/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Welcome))
+#6 /home/majeru/vhosts/splittest/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /home/majeru/vhosts/splittest/system/classes/Kohana/Request.php(997): Kohana_Request_Client->execute(Object(Request))
+#8 /home/majeru/vhosts/splittest/index.php(118): Kohana_Request->execute()
+#9 {main} in /home/majeru/vhosts/splittest/modules/database/classes/Kohana/Database/Query.php:251
+2015-03-14 11:31:53 --- EMERGENCY: ORM_Validation_Exception [ 0 ]: Failed to validate array ~ MODPATH/orm/classes/Kohana/ORM.php [ 1275 ] in /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php:1302
+2015-03-14 11:31:53 --- DEBUG: #0 /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php(1302): Kohana_ORM->check(NULL)
+#1 /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php(1421): Kohana_ORM->create(NULL)
+#2 /home/majeru/vhosts/splittest/application/classes/Controller/Welcome.php(14): Kohana_ORM->save()
+#3 /home/majeru/vhosts/splittest/system/classes/Kohana/Controller.php(84): Controller_Welcome->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /home/majeru/vhosts/splittest/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Welcome))
+#6 /home/majeru/vhosts/splittest/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /home/majeru/vhosts/splittest/system/classes/Kohana/Request.php(997): Kohana_Request_Client->execute(Object(Request))
+#8 /home/majeru/vhosts/splittest/index.php(118): Kohana_Request->execute()
+#9 {main} in /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php:1302
+2015-03-14 11:34:17 --- EMERGENCY: ORM_Validation_Exception [ 0 ]: Failed to validate array ~ MODPATH/orm/classes/Kohana/ORM.php [ 1275 ] in /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php:1302
+2015-03-14 11:34:17 --- DEBUG: #0 /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php(1302): Kohana_ORM->check(NULL)
+#1 /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php(1421): Kohana_ORM->create(NULL)
+#2 /home/majeru/vhosts/splittest/application/classes/Controller/Welcome.php(14): Kohana_ORM->save()
+#3 /home/majeru/vhosts/splittest/system/classes/Kohana/Controller.php(84): Controller_Welcome->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /home/majeru/vhosts/splittest/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Welcome))
+#6 /home/majeru/vhosts/splittest/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /home/majeru/vhosts/splittest/system/classes/Kohana/Request.php(997): Kohana_Request_Client->execute(Object(Request))
+#8 /home/majeru/vhosts/splittest/index.php(118): Kohana_Request->execute()
+#9 {main} in /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php:1302
+2015-03-14 11:34:21 --- EMERGENCY: ORM_Validation_Exception [ 0 ]: Failed to validate array ~ MODPATH/orm/classes/Kohana/ORM.php [ 1275 ] in /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php:1302
+2015-03-14 11:34:21 --- DEBUG: #0 /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php(1302): Kohana_ORM->check(NULL)
+#1 /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php(1421): Kohana_ORM->create(NULL)
+#2 /home/majeru/vhosts/splittest/application/classes/Controller/Welcome.php(14): Kohana_ORM->save()
+#3 /home/majeru/vhosts/splittest/system/classes/Kohana/Controller.php(84): Controller_Welcome->action_index()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /home/majeru/vhosts/splittest/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Welcome))
+#6 /home/majeru/vhosts/splittest/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /home/majeru/vhosts/splittest/system/classes/Kohana/Request.php(997): Kohana_Request_Client->execute(Object(Request))
+#8 /home/majeru/vhosts/splittest/index.php(118): Kohana_Request->execute()
+#9 {main} in /home/majeru/vhosts/splittest/modules/orm/classes/Kohana/ORM.php:1302
+2015-03-14 12:09:12 --- EMERGENCY: ErrorException [ 1 ]: Class 'Model_user' not found ~ MODPATH/orm/classes/Kohana/ORM.php [ 46 ] in file:line
+2015-03-14 12:09:12 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2015-03-14 12:37:49 --- EMERGENCY: ErrorException [ 1 ]: Class 'Auth_Orm' not found ~ MODPATH/auth/classes/Kohana/Auth.php [ 37 ] in file:line
+2015-03-14 12:37:49 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
