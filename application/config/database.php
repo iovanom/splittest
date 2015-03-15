@@ -21,7 +21,7 @@ return array
 			'hostname'   => 'localhost',
 			'database'   => 'splittest',
 			'username'   => 'root',
-			'password'   => 'ferrari',
+			'password'   => 'password',
 			'persistent' => FALSE,
 		),
 		'table_prefix' => '',
@@ -41,7 +41,7 @@ return array
 			 */
 			'dsn'        => 'mysql:host=localhost;dbname=splittest',
 			'username'   => 'root',
-			'password'   => 'ferrari',
+			'password'   => 'password',
 			'persistent' => FALSE,
 		),
 		/**
