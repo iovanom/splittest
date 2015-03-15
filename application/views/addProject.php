@@ -8,11 +8,11 @@
             </div>
             <div class="form-group">
                 <label for="first_page">First Page</label>
-                <input type="text" class="form-control" id="first_page" name="first_page" placeholder="Enter URL for first page">
+                <input type="url" class="form-control" id="first_page" name="first_page" placeholder="Enter Full URL for first page">
             </div>
             <div class="form-group">
                 <label for="second_page">Second Page</label>
-                <input type="text" class="form-control" id="second_page" name="second_page" placeholder="Enter URL for second page">
+                <input type="url" class="form-control" id="second_page" name="second_page" placeholder="Enter Full URL for second page">
             </div>
             <button type="submit" class="btn btn-default">Add Project</button>
         </form>

@@ -14,11 +14,12 @@
     ?>
     <tr>
         <td><?= $count ?></td><td><?= $page->url ?></td><td><?= $page->visitors ?></td>
-        <td><?= $page->active_visitors ?></td><td><?= $conversion ?> %</td>
+        <td><?= $page->active_visitors ?></td><td><?= number_format($conversion, '2') ?> %</td>
     </tr>
     <?php
         $count++;
         endforeach;
     ?>
 </table>
+<a class="btn btn-info" href="/home/getScripts/<?= $project->id ?>">Get Scripts</a>
 

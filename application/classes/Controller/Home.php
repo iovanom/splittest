@@ -28,7 +28,7 @@ class Controller_Home extends Controller_Template{
         $this->template->content = $view;
     }
     
-//Login Controller
+//Login action
     public function action_login()
     {
         if(Auth::instance()->logged_in()){
@@ -47,14 +47,14 @@ class Controller_Home extends Controller_Template{
         $this->template->content = View::factory('login');
     }
     
-//Logout controller
+//Logout action
     public function action_logout()
     {
         Auth::instance()->logout();
         HTTP::redirect(URL::site());
     }
     
-//Registre Controller
+//Registre action
     public function action_registre()
     {
         if($_POST){
@@ -80,6 +80,7 @@ class Controller_Home extends Controller_Template{
         $this->template->content = View::factory('registre');
     }
     
+// -----------Add new project action
     public function action_addProject()
     {
         if($this->is_login){
@@ -100,7 +101,7 @@ class Controller_Home extends Controller_Template{
                 $second_page->project_id = $project->id;
                 $second_page->save();
                 
-                HTTP::redirect(URL::site());
+                HTTP::redirect(URL::site('/home/getScripts/' . $project->id));
                 
             }else{
              
@@ -112,7 +113,7 @@ class Controller_Home extends Controller_Template{
             HTTP::redirect(URL::site('/login'));
         }
     }
-    
+// --------page of project------------
     public function action_project()
     {
         $id = $this->request->param('id');
@@ -123,6 +124,26 @@ class Controller_Home extends Controller_Template{
             $view = View::factory('project');
             $view->project = $project;
             $view->pages = $pages;
+            $this->template->content = $view;
+        }else{
+            HTTP::redirect(URL::site());
+        }
+    }
+    
+// -------get scripts ------------
+    public function action_getScripts()
+    {
+        $id = $this->request->param('id');
+        if($id)
+        {
+            $project = ORM::factory('Project')->where('id', '=', (int)$id)->find();
+            $pages = ORM::factory('Page')->where('project_id', '=', (int)$id)->find_all();
+            foreach($pages as $page){
+                $p[] = $page;
+            }
+            $view = View::factory('scripts');
+            $view->project = $project;
+            $view->pages = $p;
             $this->template->content = $view;
         }else{
             HTTP::redirect(URL::site());
