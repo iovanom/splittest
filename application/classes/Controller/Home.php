@@ -4,6 +4,7 @@ class Controller_Home extends Controller_Template{
     
     public $template = 'template';
     public $is_login = FALSE;
+    public $user;
     
     
     public function before() {
@@ -12,17 +13,22 @@ class Controller_Home extends Controller_Template{
             $this->is_login = TRUE;
         }
         $this->template->is_login = $this->is_login;
+        $this->user = Auth::instance()->get_user();
     }
 
-
+//Display list of all projects
     public function action_index()
     {
         if(!Auth::instance()->logged_in()){
             HTTP::redirect(URL::site('/home/login'));
         }
-        $this->template->content = 'test';
+        $projects = ORM::factory('Project')->where('user_id', '=', $this->user->id)->find_all();
+        $view = View::factory('index');
+        $view->projects = $projects;
+        $this->template->content = $view;
     }
     
+//Login Controller
     public function action_login()
     {
         if(Auth::instance()->logged_in()){
@@ -41,12 +47,14 @@ class Controller_Home extends Controller_Template{
         $this->template->content = View::factory('login');
     }
     
+//Logout controller
     public function action_logout()
     {
         Auth::instance()->logout();
         HTTP::redirect(URL::site());
     }
     
+//Registre Controller
     public function action_registre()
     {
         if($_POST){
@@ -72,6 +80,54 @@ class Controller_Home extends Controller_Template{
         $this->template->content = View::factory('registre');
     }
     
+    public function action_addProject()
+    {
+        if($this->is_login){
+            if($this->request->method() === 'POST')
+            {
+                
+                $post = $this->request->post();
+                $project = ORM::factory('Project');
+                $project->name = $post['name'];
+                $project->user_id = $this->user->id;
+                $project->save();
+                $first_page = ORM::factory('Page');
+                $first_page->url = $post['first_page'];
+                $first_page->project_id = $project->id;
+                $first_page->save();
+                $second_page = ORM::factory('Page');
+                $second_page->url = $post['second_page'];
+                $second_page->project_id = $project->id;
+                $second_page->save();
+                
+                HTTP::redirect(URL::site());
+                
+            }else{
+             
+                $view = View::factory('addProject');
+                $this->template->content = $view;
+            }
+            
+        }else{
+            HTTP::redirect(URL::site('/login'));
+        }
+    }
+    
+    public function action_project()
+    {
+        $id = $this->request->param('id');
+        if($id)
+        {
+            $project = ORM::factory('Project')->where('id', '=', (int)$id)->find();
+            $pages = ORM::factory('Page')->where('project_id', '=', (int)$id)->find_all();
+            $view = View::factory('project');
+            $view->project = $project;
+            $view->pages = $pages;
+            $this->template->content = $view;
+        }else{
+            HTTP::redirect(URL::site());
+        }
+    }
 }
 
 

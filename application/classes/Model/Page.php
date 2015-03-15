@@ -2,10 +2,10 @@
 
 class Model_Page extends ORM{
     
-    protected $_has_many = array(
+    protected $_belongs_to = array(
         'project' => array(
-            'model' => 'project',
-            'trough' => 'projects_pages'
+            'model' => 'Project',
+            'foreign_key' => 'project_id',
         )
     );
 }

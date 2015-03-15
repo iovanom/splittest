@@ -51,7 +51,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Create Project</a>
+                        <a href="/home/addProject">Add Project</a>
                     </li>
                     
                 </ul>
@@ -79,7 +79,7 @@
     <div class="container">
         
         <div class="row">
-            <div class="col-lg-12  text-center">
+            <div class="col-lg-12">
                 <?= $content ?>
             </div>
         </div>

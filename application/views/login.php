@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-4 col-lg-offset-4 text-center">
+    <div class="col-lg-4 col-lg-offset-4">
         <form method="post" name="login" action="#">
             <div class="form-group">
                 <label for="username">Username</label>

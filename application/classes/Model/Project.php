@@ -4,15 +4,15 @@ class Model_Project extends ORM{
     
     protected $_belongs_to = array(
       'user' => array(
-          'model'=>'user',
+          'model'=>'User',
           'foreign_key' => 'user_id'
       )  
     );
     
     protected $_has_many = array(
         'page' => array(
-            'model' => 'page',
-            'trough' => 'projects_pages'
+            'model' => 'Page',
+            'foreign_key' => 'project_id',
         )
     );
     
